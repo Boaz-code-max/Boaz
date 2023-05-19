@@ -3,11 +3,11 @@ DOCKER JOIP TASK
 
 ### TASK 1
 
-Run hello-world docker container and observe the container status
+* Run hello-world docker container and observe the container status
 
 #### command
 
-docker container run -d hello-world
+`docker container run -d hello-world`
 
 ![reference](./images/1.png)
 ![reference](./images/2.png)
