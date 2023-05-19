@@ -34,3 +34,6 @@ docker container stop lifecycle (to stop the lifecycle)
 docker container start lifecycle (to start the lifecycle)
 
 ```
+* Explain what happens when you run the docker container
+
+The docker run command creates running containers from images and can run commands inside them. When using the docker run command, a container can run a default action 
