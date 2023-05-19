@@ -52,13 +52,20 @@ The docker run command creates running containers from images and can run comman
 
 '''
 docker container run -d node:latest
-git clone https://github.com/npm/npm.git
+
+git clone https://github.com/Azure-Samples/js-e2e-express-server.git 
+
 ls 
+
 cd js-e2e-express-server
-js-e2e-express-server sudo apt install npm -y
+
+sudo apt install npm -y
+
 npm install
+
 npm start 
 '''
+
 ![reference](./images/7.png)
 ![reference](./images/8.png)
 ![reference](./images/9.png)
@@ -66,3 +73,12 @@ npm start
 ![reference](./images/11.png)
 ![reference](./images/12.png)
 ![reference](./images/13.png)
+
+* Dockerfile 
+
+FROM node:latest
+RUN apt update
+RUN apt install git -y
+RUN cd / && git clone https://github.com/Azure-Samples/js-e2e-express-server.git
+WORKDIR /js-e2e-express-server
+EXPOSE 3000
