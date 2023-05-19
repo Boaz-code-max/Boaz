@@ -44,6 +44,24 @@ The docker run command creates running containers from images and can run comman
 * so docker has created its own compenent called (LIB) container 
 * in this generation docker engine was revamped from monolith to multi component architure and the images and container were according to OLI (open container initiative) image spec & run time spec.
 
+* write a Docker file for NodeJS application – expressjs
 
+ Manuel Installation 
+---------------------
+#### command
 
-
+'''
+docker container run -d node:latest
+git clone https://github.com/npm/npm.git
+ls 
+cd js-e2e-express-server
+js-e2e-express-server sudo apt install npm -y
+npm install
+npm start 
+'''
+![reference](./images/7.png)
+![reference](./images/8.png)
+![reference](./images/9.png)
+![reference](./images/10.png)
+![reference](./images/11.png)
+![reference](./images/12.png)
