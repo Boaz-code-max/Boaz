@@ -37,3 +37,13 @@ docker container start lifecycle (to start the lifecycle)
 * Explain what happens when you run the docker container
 
 The docker run command creates running containers from images and can run commands inside them. When using the docker run command, a container can run a default action 
+
+### Explain the Docker architecture
+
+* Since the docker was relying on lxc which was kernel feature, update to kernel frequently used to break the containers created by docker 
+* so docker has created its own compenent called (LIB) container 
+* in this generation docker engine was revamped from monolith to multi component architure and the images and container were according to OLI (open container initiative) image spec & run time spec.
+
+
+
+
