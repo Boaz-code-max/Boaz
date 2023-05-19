@@ -19,6 +19,8 @@ DOCKER JOIP TASK
 
 * Run the nginx container with name as nginx1 and expose it 
 on 8080 port on docker host
+
+#### command
 `docker container run -d --name nginx3 -p 8080:80 nginx`
 ![reference](./images/4.png)
-
+![reference](./images/5.png)
