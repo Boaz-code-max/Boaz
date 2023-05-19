@@ -75,10 +75,16 @@ npm start
 ![reference](./images/13.png)
 
 * Dockerfile 
-
+'''
 FROM node:latest
+
 RUN apt update
+
 RUN apt install git -y
+
 RUN cd / && git clone https://github.com/Azure-Samples/js-e2e-express-server.git
+
 WORKDIR /js-e2e-express-server
+
 EXPOSE 3000
+'''
