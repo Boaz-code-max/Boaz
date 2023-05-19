@@ -26,9 +26,11 @@ on 8080 port on docker host
 * Explain docker container lifecycle
 ![reference](./images/6.png)
 #### command
+ ```
+docker container run -d --name lifecycle nginx
+docker container pause lifecycle (to pause the lifecycle)
+docker container unpause lifecycle (to unpause the lifecycle)
+docker container stop lifecycle (to stop the lifecycle)
+docker container start lifecycle (to start the lifecycle)
 
-`docker container run -d --name lifecycle nginx`
-`docker container pause lifecycle`(to pause the lifecycle)
-`docker container unpause lifecycle` (to unpause the lifecycle)
-`docker container stop lifecycle` (to stop the lifecycle)
-`docker container start lifecycle` (to start the lifecycle)
+```
