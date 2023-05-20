@@ -178,6 +178,34 @@ using exec and install python
  ![reference](./images/26.png)
  ![reference](./images/27.png)
 
+ * Create a postgres container with username panoramic and 
+password as trekking. Try logging in and show the 
+databases (query for psql)
+
+#### command
+
+```
+
+ docker container run -d --name database -e POSTGRES_USER=panoramic -e POSTGRES_PASSWORD=trekking -e POSTGRES_DB=psqldb -P postgres:15
+ docker container ls
+ docker container exec -it databasw /bin/bash
+ psql --help
+ psql -U panoramic -W  trekking -d psqldb
+  CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255);
+    Insert into Persons Values (1,'Parakati','Boaz','Karnataka','Hubli');
+     Select * from Persons;
+
+    ![reference](./images/28.png)
+    ![reference](./images/29.png)
+    ![reference](./images/30.png)
+
+
+
 
 
 
