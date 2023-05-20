@@ -184,7 +184,7 @@ databases (query for psql)
 
 #### command
 
-```
+'''
 
  docker container run -d --name database -e POSTGRES_USER=panoramic -e POSTGRES_PASSWORD=trekking -e POSTGRES_DB=psqldb -P postgres:15
  docker container ls
@@ -200,7 +200,7 @@ databases (query for psql)
     Insert into Persons Values (1,'Parakati','Boaz','Karnataka','Hubli');
     Select * from Persons;
 
-    ```
+'''
 
 ![reference](./images/28.png)
 ![reference](./images/29.png)
