@@ -154,5 +154,25 @@ python
   ![reference](./images/22.png)
   ![reference](./images/23.png)
 
+  * Create a ubuntu container with sleep 1d and then login 
+using exec and install python
+
+'''
+
+ docker container run -d --name py ubuntu:20.04 sleep 1d
+ docker container exec -it py /bin/bash
+ apt update
+ apt install python3 -y
+ python3 --version
+ Python 3.8.10
+
+ '''
+
+ ![reference](./images/24.png)
+ ![reference](./images/25.png)
+ ![reference](./images/26.png)
+ ![reference](./images/27.png)
+
+
 
 
