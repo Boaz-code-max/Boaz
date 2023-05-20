@@ -234,6 +234,9 @@ RUN echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
+docker image build -t varun:1.0 .
+docker container exec -it varun:1.0
+
 ```
 
 ![reference](./images/31.png)
