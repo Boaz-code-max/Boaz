@@ -200,9 +200,10 @@ databases (query for psql)
     Insert into Persons Values (1,'Parakati','Boaz','Karnataka','Hubli');
      Select * from Persons;
 
-    ![reference](./images/28.png)
-    ![reference](./images/29.png)
-    ![reference](./images/30.png)
+![reference](./images/28.png)
+![reference](./images/29.png)
+![reference](./images/30.png)
+    
 
 
 
