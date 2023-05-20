@@ -160,10 +160,15 @@ using exec and install python
 '''
 
  docker container run -d --name py ubuntu:20.04 sleep 1d
+
  docker container exec -it py /bin/bash
+
  apt update
+
  apt install python3 -y
+
  python3 --version
+
  Python 3.8.10
 
  '''
