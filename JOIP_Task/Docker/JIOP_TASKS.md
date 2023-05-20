@@ -95,6 +95,11 @@ CMD ["npm","start"]
 
 * create a MySQL dB container from official MySQL image
 
+* login into SQL container and create a table 
+
+* try to create a persisted volume in MySQL container and 
+mount that to other
+
 #### commands
 
 '''
@@ -131,6 +136,23 @@ Select * from Persons; (after deleting the container,still it remains in volume 
 ![reference](./images/20.png)
 ![reference](./images/21.png)
 
+* Create an alpine container in interactive mode and install 
+python
+
+#### commands
+
+ '''
+
+  docker container run -it -p --name alpine1 alpine:latest
+
+  apk update 
+
+  apk install python3
+
+  '''
+
+  ![reference](./images/22.png)
+  ![reference](./images/23.png)
 
 
 
