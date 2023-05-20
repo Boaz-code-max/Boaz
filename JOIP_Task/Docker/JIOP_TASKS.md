@@ -74,7 +74,8 @@ npm start
 ![reference](./images/12.png)
 ![reference](./images/13.png)
 
-* Dockerfile 
+* Dockerfile
+ 
 '''
 FROM node:latest
 
@@ -87,4 +88,7 @@ RUN cd / && git clone https://github.com/Azure-Samples/js-e2e-express-server.git
 WORKDIR /js-e2e-express-server
 
 EXPOSE 3000
+
+CMD ["npm","start"]
+
 '''
