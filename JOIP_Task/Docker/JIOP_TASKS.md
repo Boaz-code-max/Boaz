@@ -198,7 +198,9 @@ databases (query for psql)
     Address varchar(255),
     City varchar(255);
     Insert into Persons Values (1,'Parakati','Boaz','Karnataka','Hubli');
-     Select * from Persons;
+    Select * from Persons;
+
+    ```
 
 ![reference](./images/28.png)
 ![reference](./images/29.png)
