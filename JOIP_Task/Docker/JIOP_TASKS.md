@@ -75,7 +75,7 @@ npm start
 ![reference](./images/13.png)
 
 * Dockerfile
- 
+
 '''
 FROM node:latest
 
@@ -92,3 +92,45 @@ EXPOSE 3000
 CMD ["npm","start"]
 
 '''
+
+* create a MySQL dB container from official MySQL image
+
+#### commands
+
+'''
+ 
+docker container run -d --name mysqldb -v mysqldb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=rootroot -e MYSQL_DA
+TABASE=employees -e MYSQL_USER=qtdevops -e MYSQL_PASSWORD=rootroot -P mysql:8
+
+docker volume ls (volume created mysqldb)
+
+docker container exec -it mysqldb mysql --password=rootroot (to go iside the container )
+
+use employess 
+
+Insert into Persons Values;
+
+ Select * from Persons;
+
+ docker container rm -f imageid (to delete the container)
+
+  docker container run -d --name mysqldb --mount "source=mysqldb,target=/var/lib/mysql,type=volume" -e MYSQL_ROOT_PASSWORD=rootroot -e MYSQL_DATABASE=employees -e MYSQL_USER=qtdevops -e MYSQL_PASSWORD=rootroot -P mysql:8 (to mount the volume to check after deleting the container still it will be in volume)
+
+docker container exec -it mysqldb mysql --password=rootroot
+
+use employees;
+
+Select * from Persons; (after deleting the container,still it remains in volume mysqldb)
+
+![reference](./images/14.png)
+![reference](./images/15.png)
+![reference](./images/16.png)
+![reference](./images/17.png)
+![reference](./images/18.png)
+![reference](./images/19.png)
+![reference](./images/20.png)
+![reference](./images/21.png)
+
+
+
+
