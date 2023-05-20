@@ -236,6 +236,8 @@ CMD ["apache2ctl", "-D", "FOREGROUND"]
 
 ```
 
+![reference](./images/31.png)
+
 
 
 
