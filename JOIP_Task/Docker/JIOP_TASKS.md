@@ -205,7 +205,36 @@ databases (query for psql)
 ![reference](./images/28.png)
 ![reference](./images/29.png)
 ![reference](./images/30.png)
-    
+
+* Try to create a docker file which runs php info page, use ARG
+and ENV wherever appropriate on 1. Apache, 2. nginx
+
+Manuel Steps for installation for php & Apache
+
+#### commands
+
+`sudo apt update`
+`sudo apt upgrade` 
+`sudo apt install apache2 -y`
+`sudo apt install php libapache2-mod-php -y`   
+`sudo su`
+` echo "<?php phpinfo(); ?>" > /var/www/html/info.php`
+
+### Dockerfile 
+
+```
+
+FROM ubuntu
+LABEL author="Boaz"
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt update 
+RUN apt install apache2 -y
+RUN apt install php libapache2-mod-php -y
+RUN echo "<?php phpinfo(); ?>" >> /var/www/html/info.php
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+
+```
 
 
 
