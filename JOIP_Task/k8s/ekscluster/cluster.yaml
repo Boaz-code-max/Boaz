@@ -10,4 +10,36 @@ nodeGroups:
     volumeSize: 20
     ssh:
       allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+
+     
+     
+     
+     
+      # to create `eksctl create cluster -f cluster.yaml``
+
+      ##to delete eksctl cluster `eksctl delete cluster -f cluster.yaml --wait --disable-nodegroup-eviction``
+
+      ### install of awscli
+
+      sudo apt install unzip -y
+    5  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    6  unzip awscliv2.zip
+    7  sudo ./aws/install
+    8  aws --version
+    9  aws configure
+   10  # for ARM systems, set ARCH to: `arm64`, `armv6` or `armv7`
+   11  ARCH=amd64
+   12  PLATFORM=$(uname -s)_$ARCH
+   13  curl -sLO "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
+   14  # (Optional) Verify checksum
+   15  curl -sL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_checksums.txt" | grep $PLATFORM | sha256sum --check
+   16  tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
+   17  sudo mv /tmp/eksctl /usr/local/bin
+   18  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   19  chmod +x kubectl
+   20  ssh-keygen
+   21  vi cluster.yaml
+   22  eksctl create cluster -f cluster.yaml
+   23  vi cluster.yaml
+   24  eksctl create cluster -f cluster.yaml
   
