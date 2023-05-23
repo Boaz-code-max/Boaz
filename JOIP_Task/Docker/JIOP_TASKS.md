@@ -241,6 +241,34 @@ docker container exec -it varun:1.0
 
 ![reference](./images/31.png)
 
+* Create a Jenkins image by creating an own docker file
+
+#### command 
+
+ * Dockerfile & also manuel steps in images 
+
+```
+FROM jenkins/jenkins:latest
+ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
+
+docker image ls
+
+docker container run -d --name chandu -P jenkins/jenkins
+
+docker container run -d -p 6001:8080 chandu:latest
+
+```
+
+![reference](./images/32.png)
+![reference](./images/33.png)
+![reference](./images/34.png)
+![reference](./images/35.png)
+![reference](./images/36.png)
+![reference](./images/37.png)
+
+
+
+
 
 
 
