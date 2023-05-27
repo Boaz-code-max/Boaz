@@ -1,0 +1,15 @@
+---
+
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: chandu
+spec:
+  containers:
+    - name: apline1
+      image: alpine
+      args:
+        - sleep
+        - 1d
+
+  
