@@ -1,0 +1,20 @@
+---
+
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: restartpolicy3
+spec:
+  restartPolicy: Always 
+  containers:
+    - name: restartpolicy4
+      image: alpine
+      args:
+        - sleep
+        - 5s
+    - name: check
+      image: alpine
+      args:
+        - sleep
+        - 5sec
+  
