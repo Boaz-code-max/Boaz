@@ -1,0 +1,25 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-prc
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    metadata:
+      name: cronjob
+    spec:
+      backoffLimit: 3
+      template:
+        metadata:
+          name: job
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: nginx
+              image: nginx
+              ports:
+                - containerPort: 80  
+
+    
+

@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-deploy
+spec:
+  minReadySeconds: 1
+  replicas: 8
+  selector:
+    matchLabels:
+      app: jenkins/jenkins
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%    
+  template:
+    metadata:
+      name: jenkins-deploy
+      labels:
+        app: jenkins/jenkins
+    spec:
+      containers:
+        - name: jenkins/jenkins
+          image: jenkins/jenkins
+          livenessProbe:
+            httpGet:
+            path: /
+            port: 80
+          readinessProbe:
+            httpGet:
+            path: /
+            port: 80
+            ports:
+              - containerPort: 80 
+        
