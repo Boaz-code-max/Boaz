@@ -1,0 +1,10 @@
+---
+  - name: installation .net on ubuntu
+    hosts: all
+    become: yes
+    tasks:
+      - name: update packages and install ".net 7"
+        apt:
+          name: "dotnet-sdk-7.0"
+          state: present
+          update_cache: yes 

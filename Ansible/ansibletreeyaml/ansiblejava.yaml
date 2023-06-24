@@ -1,0 +1,10 @@
+---
+  - name: installation java on ubuntu 
+    hosts: all
+    become: yes
+    tasks:
+      - name: update packages and install java
+        apt:
+          name: openjdk-17-jdk
+          state: present
+          update_cache: yes

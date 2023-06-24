@@ -1,0 +1,35 @@
+---
+  - name: install lamp server in redhat
+    hosts: all
+    become: yes
+    tasks:
+      - name: update packages and install httpd
+        ansible.builtin.yum: 
+          name: httpd
+          state: present
+          update_cache: yes
+      - name: enable and start httpd
+        ansible.builtin.systemd:
+          name: httpd
+          enable: true
+          state: start
+      - name: installing php packages
+        ansible.builtin.yum:
+          name: php
+          state: present
+          update_cache: yes
+      - name: copy info.php
+        ansible.builtin.copy:
+          content: "<?php phpinfo(); ?>"
+          dest: /var/www/html/info.php 
+      - name: restart apache2
+        ansible.builtin.systemd:
+          name: apache2
+          state: restarted 
+          
+  
+
+          
+          
+              
+       
