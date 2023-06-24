@@ -1,0 +1,28 @@
+---
+  - name: install lamp server on ubuntu
+    hosts: all
+    become: yes
+    tasks:
+      - name: update packages and install apache
+        apt:
+          name: apache2
+          update_cache: yes
+          state: present
+      - name: install php packages
+        apt:
+          name:
+            - php
+            - libapache2-mod-php
+            - php-mysql
+          state: present
+      - name: copy the info.php page
+        apt:
+          src: info.php
+          dest: /var/www/html/info.php
+          state: present
+      - name: restart apache2
+          ansible.builtin.systemd:
+            name: apache2
+            state: restarted
+
+           
