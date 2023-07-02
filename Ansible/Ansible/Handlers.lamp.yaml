@@ -1,15 +1,15 @@
 ---
   - name: install lamp on ubuntu
-    host: all
+    hosts: all
     become: yes
     tasks:
       - name: update package and install apache
-        apt:
+        ansible.builtin.apt:
           name: apache2
           state: present 
           update_cache: yes
       - name: update package and install php
-        apt: 
+        ansible.builtin.apt: 
           name: 
             - php
             - libapache2-mod-php
