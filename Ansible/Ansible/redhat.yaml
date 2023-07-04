@@ -16,7 +16,7 @@
       - name: install php server
         ansible.builtin.yum:
           name: php
-          update_cache: true
+          update_cache: yes
           state: present
       - name: start httpd service and enable
         ansible.builtin.systemd:
