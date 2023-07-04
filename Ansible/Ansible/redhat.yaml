@@ -9,7 +9,7 @@
           state: present
           update_cache:yes
       - name: enable and restart httpd
-        ansible.builtin.systemd
+        ansible.builtin.systemd:
           name: httpd
           enable: true
           state: start
@@ -24,8 +24,8 @@
           dest: /var/www/html/info.php
       - name: enable and restart httpd
         ansible.builtin.systemd:
-        name: httpd
-        state: restart
+          name: httpd
+          state: restart
                     
 
 
