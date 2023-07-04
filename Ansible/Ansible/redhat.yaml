@@ -4,7 +4,7 @@
     become: yes
     tasks:
       - name: update and install httpd
-        yum: 
+        ansible.builtin.yum: 
           name: httpd
           state: present
           update_cache: yes
@@ -23,9 +23,9 @@
           name: httpd
           enabled: yes
           state: started 
-      - name: create info.php page
+      - name: copy info.php 
         ansible.builtin.copy:
-          content: '<?php phpinfo(); ?>' 
+          src: info.php 
           dest: /var/www/html/info.php
       - name: restart httpd service 
         ansible.builtin.systemd:
