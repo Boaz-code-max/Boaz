@@ -12,7 +12,7 @@
         ansible.builtin.systemd:
           name: httpd
           enable: true
-          state: start
+          state: restart
       - name: update package and install php
         ansible.builtin.yum:
           name: php
