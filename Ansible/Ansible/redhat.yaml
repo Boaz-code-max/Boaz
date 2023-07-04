@@ -8,10 +8,10 @@
           name: httpd
           state: present
           update_cache: yes
-      - name: enable and restart httpd
+      - name: enable and restarted httpd
         ansible.builtin.systemd:
           name: httpd
-          enable: true
+          enable: yes
           state: started
       - name: install php server
         ansible.builtin.yum:
