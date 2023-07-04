@@ -8,7 +8,7 @@
           name: httpd
           state: present
           update_cache:yes
-      -g name: enable and restart httpd
+      - name: enable and restart httpd
         ansible.builtin.systemd:
           name: httpd
           enable: yes
