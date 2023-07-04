@@ -11,14 +11,12 @@
       - name: enable and restart httpd
         ansible.builtin.systemd:
           name: httpd
-          enable: true
-          state: restarted
-          update_cache:yes
+          enable: yes
+          state: start
       - name: update package and install php
         ansible.builtin.yum:
           name: php
           state: present
-          update_cache: yes
       - name: copy path info.php
           ansible.builtin.copy:
           src: info.php
